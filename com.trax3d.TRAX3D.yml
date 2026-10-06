@@ -1,0 +1,37 @@
+app-id: com.trax3d.TRAX3D
+runtime: org.freedesktop.Platform
+runtime-version: '26.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '26.08'
+command: trax3d
+separate-locales: false
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --device=dri
+  - --filesystem=xdg-download
+modules:
+  - name: trax3d
+    buildsystem: simple
+    build-commands:
+      - cp -a . /app/trax3d
+      - install -Dm755 trax3d.sh /app/bin/trax3d
+      - install -Dm644 com.trax3d.TRAX3D.desktop /app/share/applications/com.trax3d.TRAX3D.desktop
+      - install -Dm644 com.trax3d.TRAX3D.metainfo.xml /app/share/metainfo/com.trax3d.TRAX3D.metainfo.xml
+      - install -Dm644 com.trax3d.TRAX3D.png /app/share/icons/hicolor/512x512/apps/com.trax3d.TRAX3D.png
+    sources:
+      - type: archive
+        url: https://trax3d.com/storage/downloads/linux/trax3d-1.0.2-linux-x64.tar.gz
+        sha256: 0cf505a0a6bcd9e464c2a67587574c0e863e3e1b6b8d848bdb9c77a11ccf91d7
+      - type: file
+        path: trax3d.sh
+      - type: file
+        path: com.trax3d.TRAX3D.desktop
+      - type: file
+        path: com.trax3d.TRAX3D.metainfo.xml
+      - type: file
+        path: com.trax3d.TRAX3D.png
