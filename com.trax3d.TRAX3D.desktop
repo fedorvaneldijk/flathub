@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=TRAX3D
+GenericName=Model railway planner
+GenericName[nl]=Modelspoorplanner
+GenericName[de]=Modellbahnplaner
+Comment=Design your model railway in 3D
+Comment[nl]=Ontwerp je modelspoorbaan in 3D
+Comment[de]=Planen Sie Ihre Modellbahn in 3D
+Exec=trax3d %U
+Icon=com.trax3d.TRAX3D
+Terminal=false
+Categories=Graphics;3DGraphics;
+Keywords=model railway;track plan;layout;model train;railroad;3D;modelspoor;baanplan;Modellbahn;Gleisplan;
+StartupWMClass=TRAX3D
